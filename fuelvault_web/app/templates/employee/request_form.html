@@ -1,0 +1,33 @@
+﻿{% extends "base.html" %}
+{% block content %}
+<h2>Request Fuel Coupon</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+        {{ form.vehicle_number.label(class="form-label") }}
+        {{ form.vehicle_number(class="form-control") }}
+    </div>
+    <div class="mb-3">
+        {{ form.vehicle_type.label(class="form-label") }}
+        {{ form.vehicle_type(class="form-select") }}
+    </div>
+    <div class="mb-3">
+        {{ form.fuel_type.label(class="form-label") }}
+        {{ form.fuel_type(class="form-select") }}
+    </div>
+    <div class="mb-3">
+        {{ form.amount.label(class="form-label") }}
+        {{ form.amount(class="form-control") }}
+    </div>
+    <div class="mb-3">
+        {{ form.purpose.label(class="form-label") }}
+        {{ form.purpose(class="form-select") }}
+    </div>
+    <div class="mb-3">
+        {{ form.notes.label(class="form-label") }}
+        {{ form.notes(class="form-control", rows=3) }}
+    </div>
+    <button type="submit" class="btn btn-success">Submit Request</button>
+    <a href="{{ url_for('employee.dashboard') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

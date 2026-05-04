@@ -1,0 +1,26 @@
+﻿{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-header">Quick Actions</div>
+            <div class="card-body">
+                <a href="{{ url_for('employee.request_fuel') }}" class="btn btn-primary w-100 mb-2">Request Fuel</a>
+                <a href="{{ url_for('employee.my_requests') }}" class="btn btn-secondary w-100 mb-2">My Requests</a>
+                <a href="{{ url_for('employee.update_contact') }}" class="btn btn-info w-100">Update Contact Info</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">Welcome, {{ current_user.name }}</div>
+            <div class="card-body">
+                <p>Department: {{ current_user.department }}</p>
+                <p>Email: {{ current_user.email or 'Not set' }}</p>
+                <p>Phone: {{ current_user.phone or 'Not set' }}</p>
+                <p>Role: {{ current_user.role }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
